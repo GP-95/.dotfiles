@@ -8,13 +8,13 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.autoindent = true
 
-vim.opt.titlestring = '%t'
-vim.opt.encoding = 'utf-8'
+vim.opt.titlestring = "%t"
+vim.opt.encoding = "utf-8"
 vim.opt.linebreak = false
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 20
 vim.opt.ruler = true
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 vim.opt.wrap = false
 
 vim.opt.shiftwidth = 4
@@ -26,7 +26,14 @@ vim.opt.expandtab = true
 vim.opt.colorcolumn = "80"
 vim.wo.signcolumn = "yes"
 vim.opt.swapfile = false
-vim.opt.undodir = os.getenv('HOME') .. '/.vim/undodir'
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.termguicolors = true
-vim.opt.pumheight=12
+vim.opt.pumheight = 12
+
+-- Setting background transparent
+vim.cmd([[
+    highlight NormalNC ctermbg=none guibg=none
+    highlight NonText ctermbg=none guibg=none
+    highlight signcolumn guibg=none
+]])
