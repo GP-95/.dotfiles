@@ -30,10 +30,11 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 vim.opt.termguicolors = true
 vim.opt.pumheight = 12
+vim.diagnostic.config({
+    signs = true,
+    underline = true,
+	float = { border = false },
+	virtual_text = true,
+})
 
 -- Setting background transparent
-vim.cmd([[
-    highlight NormalNC ctermbg=none guibg=none
-    highlight NonText ctermbg=none guibg=none
-    highlight signcolumn guibg=none
-]])
