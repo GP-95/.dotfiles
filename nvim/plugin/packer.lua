@@ -82,9 +82,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- Utilities
-	use({
-		"christoomey/vim-tmux-navigator",
-	})
+	use("christoomey/vim-tmux-navigator")
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
 	use({
