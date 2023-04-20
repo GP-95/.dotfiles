@@ -9,7 +9,7 @@ local mappings = {
 			l = { "<cmd>Telescope live_grep<cr>", "Grep" },
 			h = { "<cmd>Telescope help_tags<cr>", "Nvim help" },
 			b = { "<cmd>Telescope buffers<cr>", "Buffers" },
-			r = { require('telescope.builtin').lsp_references, "References" },
+			r = { require("telescope.builtin").lsp_references, "References" },
 			m = { vim.lsp.buf.format, "Format file" }, -- Maybe remap?
 		},
 		g = {
@@ -21,6 +21,11 @@ local mappings = {
 		u = "Undo tree",
 		d = { vim.diagnostic.open_float, "Diagnostics" },
 		c = { "<cmd>CommentToggle<cr>", "Toggle comment" },
+		t = {
+			name = "File tree",
+			t = { "<cmd>NvimTreeToggle<cr>", "Toggle tree" },
+            f = {"<cmd>NvimTreeFindFile<cr>", "Find file in tree"}
+		},
 	},
 }
 

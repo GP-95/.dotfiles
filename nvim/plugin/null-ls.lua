@@ -10,7 +10,6 @@ null_ls.setup({
 		fmt.stylua,
         fmt.taplo,
         fmt.yamlfmt,
-        -- fmt.shfmt
         fmt.beautysh
 	},
 })
