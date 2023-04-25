@@ -18,14 +18,23 @@ local mappings = {
 			b = { "<cmd>GitBlameToggle<cr>", "Toggle Git blame" },
 			d = { "<cmd>Gvdiffsplit<cr>", "Git diff" },
 		},
+		a = {
+			name = "Code actions",
+			a = { vim.lsp.buf.code_action, "Code actions" },
+		},
 		u = "Undo tree",
 		d = { vim.diagnostic.open_float, "Diagnostics" },
 		c = { "<cmd>CommentToggle<cr>", "Toggle comment" },
 		t = {
 			name = "File tree",
 			t = { "<cmd>NvimTreeToggle<cr>", "Toggle tree" },
-            f = {"<cmd>NvimTreeFindFile<cr>", "Find file in tree"}
+			f = { "<cmd>NvimTreeFindFile<cr>", "Find file in tree" },
 		},
+	},
+	g = {
+		name = "Go to",
+		d = { vim.lsp.buf.definition, "Definition" },
+		r = { vim.lsp.buf.references, "References" },
 	},
 }
 
