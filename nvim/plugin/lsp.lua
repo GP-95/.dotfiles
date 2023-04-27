@@ -10,7 +10,8 @@ lsp.ensure_installed({
 	"lua_ls",
 	"hls",
     "taplo",
-    "gopls"
+    "gopls",
+    "sqlls"
 })
 
 lsp.setup_nvim_cmp({

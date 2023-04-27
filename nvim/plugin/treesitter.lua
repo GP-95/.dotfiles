@@ -13,7 +13,8 @@ require('nvim-treesitter.configs').setup({
         "json",
         "toml",
         "yaml",
-        "swift"
+        "swift",
+        "sql"
     },
     sync_install = false,
     auto_install = true,
