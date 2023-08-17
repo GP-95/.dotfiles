@@ -1,4 +1,5 @@
 local lsp = require("lsp-zero")
+local configs = require("lspconfig/configs")
 
 lsp.preset("recommended")
 
@@ -9,9 +10,9 @@ lsp.ensure_installed({
 	"rust_analyzer",
 	"lua_ls",
 	"hls",
-    "taplo",
-    "gopls",
-    "sqlls"
+	"taplo",
+	"gopls",
+	"sqlls",
 })
 
 lsp.setup_nvim_cmp({
@@ -27,12 +28,13 @@ lsp.setup_nvim_cmp({
 		-- {name = 'buffer', keyword_length = 3},
 		{ name = "path", keyword_length = 3 },
 		-- { name = "luasnip" },
-	}
+	},
 })
 
 lsp.nvim_workspace({
 	librart = vim.api.nvim_get_runtime_file("", true),
 })
+
 lsp.configure("sumneko_lua", {
 	settings = {
 		Lua = {
@@ -45,13 +47,21 @@ lsp.configure("sumneko_lua", {
 	},
 })
 
--- lsp.configure("tsserver", {
---     root_dir = vim.lsp.util.root_pattern("package.json")
--- })
---
--- lsp.configure("deno", {
---     root_dir = vim.lsp.util.root_pattern("deno.json", "deno.jsonc")
--- })
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+require("lspconfig").emmet_ls.setup({
+	capabilities = capabilities,
+	filetypes = { "css", "html", "javascript", "javascriptreact", "sass", "scss", "svelte", "typescriptreact" },
+	init_options = {
+		html = {
+			options = {
+				-- For possible options, see: https://github.com/emmetio/emmet/blob/master/src/config.ts#L79-L267
+				-- ["bem.enabled"] = true,
+			},
+		},
+	},
+})
 
 local rust_lsp = lsp.build_options("rust_analyzer", {
 	checkOnSave = {

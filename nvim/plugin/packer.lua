@@ -42,6 +42,8 @@ return require("packer").startup(function(use)
 		},
 	})
 
+	use("windwp/nvim-ts-autotag")
+
 	-- Rust
 	use({
 		"saecki/crates.nvim",
@@ -59,17 +61,17 @@ return require("packer").startup(function(use)
 		tag = "0.1.0",
 		requires = { "nvim-lua/plenary.nvim" },
 		config = function()
-            local actions = require("telescope.actions")
+			local actions = require("telescope.actions")
 			require("telescope").setup({
-                defaults = {
-                    mappings = {
-                        i = {
-                            ["<Tab>"] = actions.move_selection_next,
-                            ["<S-Tab>"] = actions.move_selection_previous
-                        }
-                    }
-                }
-            })
+				defaults = {
+					mappings = {
+						i = {
+							["<Tab>"] = actions.move_selection_next,
+							["<S-Tab>"] = actions.move_selection_previous,
+						},
+					},
+				},
+			})
 		end,
 	})
 
