@@ -7,7 +7,7 @@ return {
         "MunifTanjim/nui.nvim",
     },
     config = function()
-        require('neo-tree').setup {}
+        require('neo-tree').setup {position = 'left'}
         vim.cmd([[
             highlight NeoTreeNormal guibg=NONE ctermbg=NONE
             highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE
