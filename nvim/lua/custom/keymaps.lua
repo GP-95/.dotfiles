@@ -36,7 +36,7 @@ vim.keymap.set('n', '<leader>gs', '<cmd>0G<cr>', { desc = "Git status" })
 vim.keymap.set('n', '<leader>gb', '<cmd>GitBlameToggle<cr>', { desc = "Git blame" })
 vim.keymap.set('n', '<leader>gd', '<cmd>Gvdiffsplit<cr>', { desc = "Diff" })
 
-vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format)
+-- vim.keymap.set("n", "<leader>fm", vim.lsp.buf.format)
 
 -- Neotree
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "Toggle tree" })
