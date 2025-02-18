@@ -2,6 +2,12 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- if vim.fn.has("multi_byte") then
+-- 	vim.opt.fileencodings = "ucs-bom,utf-16le,latin1"
+-- else
+-- 	vim.opt.fileencodings = "utf-8,default,latin1"
+-- end
+
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = true
 
@@ -441,8 +447,18 @@ require("lazy").setup({
 				lua_ls = {
 					settings = {
 						Lua = {
+							runtime = {
+								version = "LuaJIT",
+							},
 							completion = {
 								callSnippet = "Replace",
+							},
+							telemetry = {
+								enable = false,
+							},
+							workspace = {
+								-- Make the server aware of Neovim runtime files
+								library = vim.api.nvim_get_runtime_file("", true),
 							},
 							-- diagnostics = { disable = { 'missing-fields' } },
 						},
