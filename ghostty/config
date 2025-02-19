@@ -1,6 +1,9 @@
 font-size = 14
-theme = tokyonight_night
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
 
+theme = tokyonight_night
 background = #1a1b26
 foreground = #c0caf5
 background-opacity = 0.9
@@ -12,7 +15,6 @@ window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
 window-theme = dark
-
 
 window-width = 150
 window-height = 45
