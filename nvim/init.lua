@@ -152,7 +152,6 @@ require("lazy").setup({
 		},
 		config = function()
 			require("neo-tree").setup({
-				position = "left",
 				filesystem = {
 					filtered_items = {
 						hide_by_pattern = {
@@ -160,13 +159,18 @@ require("lazy").setup({
 						},
 					},
 				},
+				window = {
+					position = "right",
+					width = 30,
+				},
+				close_if_last_window = true
 			})
 			vim.keymap.set("n", "<leader>t", "<cmd>Neotree toggle<CR>", { desc = "[T]oggle tree" })
 
 			vim.cmd([[
-            highlight NeoTreeNormal guibg=NONE ctermbg=NONE
-            highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE
-        ]])
+				highlight NeoTreeNormal guibg=NONE ctermbg=NONE
+				highlight NeoTreeNormalNC guibg=NONE ctermbg=NONE
+			]])
 		end,
 	},
 
