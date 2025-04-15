@@ -157,9 +157,18 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+# Secondary monitor
 [[on-window-detected]]
   if.app-id = "com.hnc.Discord"
   run = 'move-node-to-workspace 4'
+[[on-window-detected]]
+  if.app-id = "com.microsoft.teams"
+  run = 'move-node-to-workspace 4'
+[[on-window-detected]]
+  if.app-id = "com.brave.Browser"
+  run = 'move-node-to-workspace 4'
+
+# Primary monitor
 [[on-window-detected]]
   if.app-id = "com.mitchellh.ghostty"
   run = 'move-node-to-workspace 1'
@@ -168,4 +177,7 @@ alt-shift-l = ['join-with right', 'mode main']
   run = 'move-node-to-workspace 1'
 [[on-window-detected]]
   if.app-id = "com.riotgames.LeagueofLegends.LeagueClientUx"
+  run = 'move-node-to-workspace 1'
+[[on-window-detected]]
+  if.app-id = "com.microsoft.teams"
   run = 'move-node-to-workspace 1'
